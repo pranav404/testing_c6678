@@ -14,7 +14,7 @@ void fft256(float *ipr,float tr[],float ti[], float *op);
 	float tr[64],ti[64],dataarray[128],output[128];
 	int n,j,read,data,i,k,sample_num,passes;
 	FILE *fp1,*fp2,*fp3,*fp4;
-	const char *c = "D:\\lookup_table\\as3.wav";
+	const char *c = "as3.wav";
 	fp1  = fopen(c,"rb");
 
 	if(fp1 == NULL)
@@ -23,7 +23,7 @@ void fft256(float *ipr,float tr[],float ti[], float *op);
 		fclose(fp1);
 		exit(0);
 	}
-	c = "D:\\lookup_table\\Output1.dat";
+	c = "Output1.dat";
 	fp4 = fopen(c,"wb");
 
 	for(i = 0;i<11;i++)
@@ -36,9 +36,9 @@ void fft256(float *ipr,float tr[],float ti[], float *op);
 	if(n == 128)
 	{
 
-		c = "D:\\lookup_table\\cos.txt";
+		c = "cos.txt";
 		fp2 = fopen(c,"r");
-		c = "D:\\lookup_table\\sin.txt";
+		c = "sin.txt";
 		fp3 = fopen(c,"r");
 		fread(tr,sizeof(float),64,fp2);
 		fread(ti,sizeof(float),64,fp3);
